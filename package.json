@@ -1,0 +1,49 @@
+{
+  "name": "react-hackterm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "qr-delight.js",
+  "scripts": {
+    "build": "babel src -d build",
+    "lint": "eslint src/** --fix ; exit 0",
+    "lint:watch": "esw -w src/**"
+  },
+  "keywords": "react, qr, qrcode, delight, component",
+  "repository": {
+    "type": "git",
+    "url": "YOUR_GIT_REPO_URL"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "author": "Olalekan Animashaun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kimolalekan/QR-Delight.gitissues"
+  },
+  "homepage": "https://github.com/kimolalekan/QR-Delight.git#readme",
+  "dependencies": {
+    "add": "^2.0.6",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-jss": "^10.0.0",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^7.2.3",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.7.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.3.0",
+    "eslint-watch": "^3.1.2",
+    "polished": "^1.7.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  }
+}
