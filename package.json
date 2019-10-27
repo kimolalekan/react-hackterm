@@ -11,7 +11,7 @@
   "keywords": "react, qr, qrcode, delight, component",
   "repository": {
     "type": "git",
-    "url": "YOUR_GIT_REPO_URL"
+    "url": "https://github.com/kimolalekan/react-hackterm.git"
   },
   "files": [
     "dist",
@@ -20,9 +20,9 @@
   "author": "Olalekan Animashaun",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kimolalekan/QR-Delight.gitissues"
+    "url": "https://github.com/kimolalekan/react-hackterm.gitissues"
   },
-  "homepage": "https://github.com/kimolalekan/QR-Delight.git#readme",
+  "homepage": "https://github.com/kimolalekan/react-hackterm.git#readme",
   "dependencies": {
     "add": "^2.0.6",
     "prop-types": "^15.7.2",
