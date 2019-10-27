@@ -44,7 +44,7 @@ var Terminal = function (_React$Component) {
       commands: [{
         name: "info",
         description: "Get terminal information",
-        value: "Welcome to React Hackable Terminal"
+        value: "Hackable terminal emulator in React"
       }, {
         name: "repo",
         description: "Get terminal repo",
@@ -71,7 +71,7 @@ var Terminal = function (_React$Component) {
       var val = "";
 
       this.state.commands.forEach(function (item, key) {
-        var command = "<div>" + item.name + " - " + item.description + "</div>";
+        var command = "<div><span class='command'>" + item.name + "</span> - " + item.description + "</div>";
         val += command;
       });
 
@@ -101,7 +101,7 @@ var Terminal = function (_React$Component) {
       input = input.trim();
 
       if (input.length >= 1 && input !== "help" && input !== "clear") {
-        document.querySelector(".output").innerHTML += "<div style='margin-bottom: 20px; font-family: " + config.font + "; font-size: " + config.text + "px;'>" + input + ": command not found</div>";
+        document.querySelector(".output").innerHTML += "<div style='margin-bottom: 20px; font-family: " + config.font + "; font-size: " + config.text + "px;'><span class='command'>" + input + "</span>: command not found</div>";
         document.querySelector("#terminal-editor").value = "";
         this.goToBottom();
       }
@@ -113,7 +113,7 @@ var Terminal = function (_React$Component) {
       input = input.trim();
 
       if (input.length < 1) {
-        document.querySelector(".output").innerHTML += "<div>" + (0, _Prefix2.default)(config) + "</div>";
+        document.querySelector(".output").innerHTML += "<div style='width:100%'>" + (0, _Prefix2.default)(config) + "</div>";
 
         document.querySelector("#terminal-editor").value = "";
         this.goToBottom();
@@ -159,9 +159,14 @@ var Terminal = function (_React$Component) {
     key: "loadCommands",
     value: function loadCommands() {
       var commands = this.state.commands;
-      var command = this.props.commands ? this.props.commands : [];
+      var command = this.props.command ? this.props.command : [];
       commands = [].concat(_toConsumableArray(commands), _toConsumableArray(command));
       this.setState({ commands: commands });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.loadCommands();
     }
   }, {
     key: "render",
@@ -195,13 +200,17 @@ var Terminal = function (_React$Component) {
                 }
               },
               config.mode === "default" ? "$" : "",
-              config.mode === "root" && config.modeText ? "root@" + config.modeText + "#" : "",
-              config.mode === "custom" && config.modeText ? config.modeText : ""
+              config.mode === "root" && config.modeText ? "root@" + config.modeText + " #" : "",
+              config.mode === "custom" && config.modeText ? _react2.default.createElement(
+                "span",
+                null,
+                "\u276F"
+              ) : ""
             ),
             _react2.default.createElement("input", {
-              autoComplete: "off",
-              className: "input",
               id: "terminal-editor",
+              className: "input",
+              autoComplete: "off",
               spellCheck: false,
               style: {
                 fontFamily: "" + config.font,
@@ -218,8 +227,8 @@ var Terminal = function (_React$Component) {
 }(_react2.default.Component);
 
 Terminal.propTypes = {
-  command: _propTypes2.default.object,
-  config: _propTypes2.default.object.isRequired
+  config: _propTypes2.default.object.isRequired,
+  command: _propTypes2.default.array
 };
 
 exports.default = Terminal;

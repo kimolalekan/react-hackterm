@@ -2,12 +2,8 @@
 
 Hackable terminal emulator in React
 
-
-
 ![Screenshot 2019-10-27 at 7 05 38 PM](https://user-images.githubusercontent.com/2352462/67639186-0e28c000-f8ed-11e9-80bb-fe02a36c8d84.png)
 ![Screenshot 2019-10-27 at 7 08 26 PM](https://user-images.githubusercontent.com/2352462/67639199-31ec0600-f8ed-11e9-9698-962d87b44fca.png)
-
-
 
 #### Milestone
 
@@ -28,6 +24,12 @@ $ npm i react-hackterm
 $ yarn add react-term
 
 ```
+
+**Themes**
+
+default, github, grass, ocean and pure.
+
+[See available themes here](https://github.com/kimolalekan/react-hackterm/tree/master/dist/themes)
 
 **Usage**
 
@@ -60,18 +62,15 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
 
-
 **Inbuilt command**
 
-| Commands | Value |
-| -------- | ----- |
-| help     | Show available commands |
-| info     | About terminal |
-| date     | Get current date |
+| Commands | Value                              |
+| -------- | ---------------------------------- |
+| help     | Show available commands            |
+| info     | About terminal                     |
+| date     | Get current date                   |
 | repo     | Reach hackable terminal repository |
-| clear    | Show clear history |
-
-
+| clear    | Show clear history                 |
 
 **Properties**
 

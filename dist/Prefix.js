@@ -16,14 +16,14 @@ var prefix = function prefix(config) {
     val = "$";
   } else if (config.mode === "root" && config.modeText) {
     val = "root@" + config.modeText + "#";
-  } else if (config.mode === "custom" && config.modeText) {
-    val = config.modeText;
+  } else if (config.mode === "custom") {
+    val = "\u276F";
   }
   return val;
 };
 
 var Prefix = function Prefix(config) {
-  return "<span\n      className=\"prefix\"\n      style=\"font-family: " + config.font + "; font-size: " + config.text + "px;\">\n     " + prefix(config) + "\n    </span>";
+  return "<span\n      class=\"prefix\"\n      style=\"padding-right: 10px; font-family: " + config.font + "; font-size: " + config.text + "px;\">\n   " + prefix(config) + "\n    </span>";
 };
 
 exports.default = Prefix;

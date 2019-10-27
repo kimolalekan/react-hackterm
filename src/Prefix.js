@@ -6,17 +6,19 @@ const prefix = config => {
     val = "$";
   } else if (config.mode === "root" && config.modeText) {
     val = "root@" + config.modeText + "#";
-  } else if (config.mode === "custom" && config.modeText) {
-    val = config.modeText;
+  } else if (config.mode === "custom") {
+    val = `❯`;
   }
   return val;
 };
 
 const Prefix = config => {
   return `<span
-      className="prefix"
-      style="font-family: ${config.font}; font-size: ${config.text}px;">
-     ${prefix(config)}
+      class="prefix"
+      style="padding-right: 10px; font-family: ${config.font}; font-size: ${
+    config.text
+  }px;">
+   ${prefix(config)}
     </span>`;
 };
 

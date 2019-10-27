@@ -1,0 +1,57 @@
+.terminal {
+  background: #2f43bc;
+  color: #bfbfbf;
+  overflow: auto;
+}
+.terminal .prefix {
+  color: #fff;
+}
+.terminal .command {
+  color: #fff;
+}
+.terminal .branch {
+  background: #17c7ff;
+  color: #fff;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 3px;
+}
+.terminal .inner {
+  padding: 10px;
+}
+.terminal .inner .output,
+.terminal .inner .output-shell {
+  display: table;
+}
+.terminal .inner .output .prefix,
+.terminal .inner .output-shell .prefix {
+  float: left;
+  color: #fff;
+}
+.terminal .inner .output input,
+.terminal .inner .output-shell input {
+  float: left;
+  display: block;
+  background: transparent;
+  color: #bfbfbf;
+  border: 0;
+}
+.terminal .inner .editor {
+  display: table;
+}
+.terminal .inner .editor .prefix {
+  float: left;
+  color: #fff;
+}
+.terminal .inner .editor input {
+  float: left;
+  display: block;
+  background: transparent;
+  color: #bfbfbf;
+  border: 0;
+  padding-left: 10px;
+}
+.terminal .inner .editor input:hover,
+.terminal .inner .editor input:focus {
+  outline: none;
+}

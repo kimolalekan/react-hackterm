@@ -11,7 +11,7 @@ class Terminal extends React.Component {
         {
           name: "info",
           description: "Get terminal information",
-          value: "Welcome to React Hackable Terminal"
+          value: "Hackable terminal emulator in React"
         },
         {
           name: "repo",
@@ -37,7 +37,12 @@ class Terminal extends React.Component {
     let val = "";
 
     this.state.commands.forEach((item, key) => {
-      let command = "<div>" + item.name + " - " + item.description + "</div>";
+      let command =
+        "<div><span class='command'>" +
+        item.name +
+        "</span> - " +
+        item.description +
+        "</div>";
       val += command;
     });
 
@@ -77,9 +82,9 @@ class Terminal extends React.Component {
         config.font +
         "; font-size: " +
         config.text +
-        "px;'>" +
+        "px;'><span class='command'>" +
         input +
-        ": command not found</div>";
+        "</span>: command not found</div>";
       document.querySelector("#terminal-editor").value = "";
       this.goToBottom();
     }
@@ -91,7 +96,7 @@ class Terminal extends React.Component {
 
     if (input.length < 1) {
       document.querySelector(".output").innerHTML +=
-        "<div>" + Prefix(config) + "</div>";
+        "<div style='width:100%'>" + Prefix(config) + "</div>";
 
       document.querySelector("#terminal-editor").value = "";
       this.goToBottom();
@@ -135,9 +140,13 @@ class Terminal extends React.Component {
 
   loadCommands() {
     let commands = this.state.commands;
-    let command = this.props.commands ? this.props.commands : [];
+    let command = this.props.command ? this.props.command : [];
     commands = [...commands, ...command];
     this.setState({ commands });
+  }
+
+  componentDidMount() {
+    this.loadCommands();
   }
 
   render() {
@@ -163,16 +172,18 @@ class Terminal extends React.Component {
             >
               {config.mode === "default" ? "$" : ""}
               {config.mode === "root" && config.modeText
-                ? `root@${config.modeText}#`
+                ? `root@${config.modeText} #`
                 : ""}
-              {config.mode === "custom" && config.modeText
-                ? config.modeText
-                : ""}
+              {config.mode === "custom" && config.modeText ? (
+                <span>❯</span>
+              ) : (
+                ""
+              )}
             </span>
             <input
-              autoComplete="off"
-              className="input"
               id="terminal-editor"
+              className="input"
+              autoComplete="off"
               spellCheck={false}
               style={{
                 fontFamily: `${config.font}`,
@@ -187,8 +198,8 @@ class Terminal extends React.Component {
 }
 
 Terminal.propTypes = {
-  command: PropTypes.object,
-  config: PropTypes.object.isRequired
+  config: PropTypes.object.isRequired,
+  command: PropTypes.array
 };
 
 export default Terminal;
