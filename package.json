@@ -1,36 +1,25 @@
 {
   "name": "react-hackterm",
-  "version": "1.0.0",
-  "description": "",
-  "main": "qr-delight.js",
+  "version": "1.0.6",
+  "description": "Hackable terminal emulator in React",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "babel src -d build",
+    "build": "babel src -d dist",
     "lint": "eslint src/** --fix ; exit 0",
     "lint:watch": "esw -w src/**"
   },
-  "keywords": "react, qr, qrcode, delight, component",
+  "keywords": "react, terminal, emulator, bash, zsh, ohmyzsh, iterm, xterm, component",
   "repository": {
     "type": "git",
     "url": "https://github.com/kimolalekan/react-hackterm.git"
   },
-  "files": [
-    "dist",
-    "README.md"
-  ],
   "author": "Olalekan Animashaun",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kimolalekan/react-hackterm.gitissues"
   },
   "homepage": "https://github.com/kimolalekan/react-hackterm.git#readme",
-  "dependencies": {
-    "add": "^2.0.6",
-    "prop-types": "^15.7.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-jss": "^10.0.0",
-    "webpack": "^4.41.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -43,7 +32,7 @@
     "eslint-plugin-react": "^7.3.0",
     "eslint-watch": "^3.1.2",
     "polished": "^1.7.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0"
   }
 }

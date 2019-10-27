@@ -11,12 +11,12 @@ class Terminal extends React.Component {
         {
           name: "info",
           description: "Get terminal information",
-          value: "Welcome to React terminal"
+          value: "Welcome to React Hackable Terminal"
         },
         {
           name: "repo",
           description: "Get terminal repo",
-          value: "https://github.com/kimolalekan/"
+          value: "https://github.com/kimolalekan/react-hackterm.git"
         },
         {
           name: "date",

@@ -1,4 +1,4 @@
-### React Terminal
+### React hackterm
 
 Hackable terminal emulator in React
 
@@ -6,9 +6,10 @@ Hackable terminal emulator in React
 
 - [x] Hackable Terminal UI
 - [x] Terminal prefixing
-- [x] Custom commands
-- [] Command flags
-- [] Theming
+- [ ] Custom commands
+- [ ] Command flags
+- [ ] Theming
+- [ ] Command history
 
 **Installation**
 
@@ -29,7 +30,7 @@ import ReactDOM from "react-dom";
 import Terminal from "react-hackterm";
 
 //Add theme
-import "react-hackterm/themes/default.css";
+import "react-hackterm/dist/themes/default.css";
 
 function App() {
   return (
@@ -51,6 +52,15 @@ function App() {
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
+
+**Inbuilt command**
+|Commands|value|
+|--------|-----|
+|help|Show available commands|
+|info|About terminal|
+|date|Get current date|
+|repo|Reach hackable terminal repository|
+|clear|Show clear history|
 
 **Properties**
 
