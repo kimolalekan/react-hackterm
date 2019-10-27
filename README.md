@@ -2,6 +2,13 @@
 
 Hackable terminal emulator in React
 
+
+
+![Screenshot 2019-10-27 at 7 05 38 PM](https://user-images.githubusercontent.com/2352462/67639186-0e28c000-f8ed-11e9-80bb-fe02a36c8d84.png)
+![Screenshot 2019-10-27 at 7 08 26 PM](https://user-images.githubusercontent.com/2352462/67639199-31ec0600-f8ed-11e9-9698-962d87b44fca.png)
+
+
+
 #### Milestone
 
 - [x] Hackable Terminal UI
