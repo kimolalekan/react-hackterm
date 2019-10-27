@@ -14,10 +14,10 @@ Hackable terminal emulator in React
 **Installation**
 
 ```
-
+//use npm
 $ npm i react-hackterm
 
-//Or use yarn
+//use yarn
 $ yarn add react-term
 
 ```
@@ -54,8 +54,8 @@ ReactDOM.render(<App />, rootElement);
 ```
 
 **Inbuilt command**
-|Commands|value|
-|--------|-----|
+|Commands|Value|
+|--------|-------------------------------|
 |help|Show available commands|
 |info|About terminal|
 |date|Get current date|
