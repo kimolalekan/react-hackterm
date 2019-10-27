@@ -57,7 +57,7 @@ ReactDOM.render(<App />, rootElement);
 **Inbuilt command**
 
 | Commands | Value |
-| --------: | -----: |
+| -------- | ----- |
 | help     | Show available commands |
 | info     | About terminal |
 | date     | Get current date |
