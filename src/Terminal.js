@@ -156,6 +156,7 @@ class Terminal extends React.Component {
       <div
         className="terminal"
         style={{
+          width: config.width ? config.width : "100%",
           height: config.height,
           borderRadius: config.edge ? 5 : 0
         }}

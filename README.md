@@ -9,9 +9,9 @@ Hackable terminal emulator in React
 
 - [x] Hackable Terminal UI
 - [x] Terminal prefixing
-- [ ] Custom commands
+- [x] Custom commands
 - [ ] Command flags
-- [ ] Theming
+- [x] Theming
 - [ ] Command history
 
 **Installation**
@@ -48,6 +48,7 @@ function App() {
         config={{
           mode: "root",
           modeText: "example.com",
+          width: 500,
           height: 300,
           edge: true,
           font: "monospace",
@@ -74,7 +75,7 @@ ReactDOM.render(<App />, rootElement);
 
 **Properties**
 
-| Property | Value                                                                                                                       | Type   |
-| -------- | --------------------------------------------------------------------------------------------------------------------------- | ------ |
-| config   | {<br/>mode: "root",<br/>modeText: "example.com",<br/>height: 300,<br/>edge: true,<br/>font: "monospace",<br/>text: 14<br/>} | object |
-| commands | [{<br/>name: "repo",<br/>description: "Get repo", <br/>value: "https://github.com/"<br/>}]                                  | array  |
+| Property | Value                                                                                                                                       | Type   |
+| -------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| config   | {<br/>mode: "root",<br/>modeText: "example.com",<br/>width: 500,<br/>height: 300,<br/>edge: true,<br/>font: "monospace",<br/>text: 14<br/>} | object |
+| commands | [{<br/>name: "repo",<br/>description: "Get repo", <br/>value: "https://github.com/"<br/>}]                                                  | array  |
