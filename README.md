@@ -47,10 +47,10 @@ function App() {
           height: 300,
           edge: true,
           font: "monospace",
-          text: 14,
-          theme: "pure",
-          bar: "macos"
+          text: 14
         }}
+        theme="pure"
+        bar="macos"
         command={[
           {
             name: "whoami",
@@ -88,3 +88,5 @@ ReactDOM.render(<App />, rootElement);
 | -------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------ |
 | config   | {<br/>mode: "root",<br/>modeText: "example.com",<br/>width: 500,<br/>height: 300,<br/>edge: true,<br/>font: "monospace",<br/>text: 14<br/>} | object |
 | commands | [{<br/>name: "repo",<br/>description: "Get repo", <br/>value: "https://github.com/"<br/>}]                                                  | array  |
+| theme    | default, github, grass, ocean or pure.                                                                                                      | string |
+| bar      | windows, macos or ubuntu                                                                                                                    | string |

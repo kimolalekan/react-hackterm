@@ -4,7 +4,7 @@ import cookie from "cookie_js";
 import Command from "./Command";
 import Prefix from "./Prefix";
 import Bar from "./Bar";
-import { Default, Github, Grass, Ocean, Pure } from "./themes";
+import Theme from "./themes";
 
 class Terminal extends React.Component {
   constructor(props) {
@@ -29,22 +29,6 @@ class Terminal extends React.Component {
         }
       ]
     };
-  }
-
-  setTheme(val) {
-    let theme = <Default />;
-    if (theme === "default") {
-      theme = <Default />;
-    } else if (theme === "github") {
-      theme = <Github />;
-    } else if (theme === "grass") {
-      theme = <Grass />;
-    } else if (theme === "ocean") {
-      theme = <Ocean />;
-    } else if (theme === "pure") {
-      theme = <Pure />;
-    }
-    return theme;
   }
 
   goToBottom() {
@@ -190,11 +174,11 @@ class Terminal extends React.Component {
   }
 
   render() {
-    const { config, terminalHistory } = this.props;
+    const { bar, config, terminalHistory, theme } = this.props;
 
     return (
       <div>
-        {this.setTheme(config.theme)}
+        <Theme value={bar} />
         <div
           className="terminal"
           style={{
@@ -203,7 +187,7 @@ class Terminal extends React.Component {
             borderRadius: config.edge ? 5 : 0
           }}
         >
-          <Bar type={config.bar} />
+          <Bar type={bar} />
           <div className="inner">
             <div className="output" />
             <form className="editor" onSubmit={this.handleTerminal.bind(this)}>
@@ -245,8 +229,10 @@ class Terminal extends React.Component {
 }
 
 Terminal.propTypes = {
+  bar: PropTypes.string,
   config: PropTypes.object.isRequired,
-  command: PropTypes.array
+  command: PropTypes.array,
+  theme: PropTypes.string
 };
 
 export default Terminal;

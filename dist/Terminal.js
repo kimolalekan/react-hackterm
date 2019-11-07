@@ -32,6 +32,8 @@ var _Bar2 = _interopRequireDefault(_Bar);
 
 var _themes = require("./themes");
 
+var _themes2 = _interopRequireDefault(_themes);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
@@ -70,23 +72,6 @@ var Terminal = function (_React$Component) {
   }
 
   _createClass(Terminal, [{
-    key: "setTheme",
-    value: function setTheme(val) {
-      var theme = _react2.default.createElement(_themes.Default, null);
-      if (theme === "default") {
-        theme = _react2.default.createElement(_themes.Default, null);
-      } else if (theme === "github") {
-        theme = _react2.default.createElement(_themes.Github, null);
-      } else if (theme === "grass") {
-        theme = _react2.default.createElement(_themes.Grass, null);
-      } else if (theme === "ocean") {
-        theme = _react2.default.createElement(_themes.Ocean, null);
-      } else if (theme === "pure") {
-        theme = _react2.default.createElement(_themes.Pure, null);
-      }
-      return theme;
-    }
-  }, {
     key: "goToBottom",
     value: function goToBottom() {
       document.querySelector("#terminal_editor").focus();
@@ -221,14 +206,16 @@ var Terminal = function (_React$Component) {
     key: "render",
     value: function render() {
       var _props = this.props,
+          bar = _props.bar,
           config = _props.config,
-          terminalHistory = _props.terminalHistory;
+          terminalHistory = _props.terminalHistory,
+          theme = _props.theme;
 
 
       return _react2.default.createElement(
         "div",
         null,
-        this.setTheme(config.theme),
+        _react2.default.createElement(_themes2.default, { value: bar }),
         _react2.default.createElement(
           "div",
           {
@@ -239,7 +226,7 @@ var Terminal = function (_React$Component) {
               borderRadius: config.edge ? 5 : 0
             }
           },
-          _react2.default.createElement(_Bar2.default, { type: config.bar }),
+          _react2.default.createElement(_Bar2.default, { type: bar }),
           _react2.default.createElement(
             "div",
             { className: "inner" },
@@ -287,8 +274,10 @@ var Terminal = function (_React$Component) {
 }(_react2.default.Component);
 
 Terminal.propTypes = {
+  bar: _propTypes2.default.string,
   config: _propTypes2.default.object.isRequired,
-  command: _propTypes2.default.array
+  command: _propTypes2.default.array,
+  theme: _propTypes2.default.string
 };
 
 exports.default = Terminal;
