@@ -178,7 +178,7 @@ class Terminal extends React.Component {
 
     return (
       <div>
-        <Theme value={bar} />
+        <Theme value={theme} />
         <div
           className="terminal"
           style={{

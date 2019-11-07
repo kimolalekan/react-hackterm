@@ -34,28 +34,17 @@ var _Pure2 = _interopRequireDefault(_Pure);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function setTheme(val) {
-  var theme = _react2.default.createElement(_Default2.default, null);
-  if (theme === "default") {
-    theme = _react2.default.createElement(_Default2.default, null);
-  } else if (theme === "github") {
-    theme = _react2.default.createElement(_Github2.default, null);
-  } else if (theme === "grass") {
-    theme = _react2.default.createElement(_Grass2.default, null);
-  } else if (theme === "ocean") {
-    theme = _react2.default.createElement(_Ocean2.default, null);
-  } else if (theme === "pure") {
-    theme = _react2.default.createElement(_Pure2.default, null);
-  }
-  return theme;
-}
-
 var Theme = function Theme(_ref) {
   var value = _ref.value;
   return _react2.default.createElement(
     "div",
     null,
-    setTheme(value)
+    value === "default" ? _react2.default.createElement(_Default2.default, null) : "",
+    value === "github" ? _react2.default.createElement(_Github2.default, null) : "",
+    value === "grass" ? _react2.default.createElement(_Grass2.default, null) : "",
+    value === "ocean" ? _react2.default.createElement(_Ocean2.default, null) : "",
+    value === "pure" ? _react2.default.createElement(_Pure2.default, null) : "",
+    !value ? _react2.default.createElement(_Default2.default, null) : ""
   );
 };
 

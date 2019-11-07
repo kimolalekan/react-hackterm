@@ -215,7 +215,7 @@ var Terminal = function (_React$Component) {
       return _react2.default.createElement(
         "div",
         null,
-        _react2.default.createElement(_themes2.default, { value: bar }),
+        _react2.default.createElement(_themes2.default, { value: theme }),
         _react2.default.createElement(
           "div",
           {
