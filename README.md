@@ -48,7 +48,8 @@ function App() {
           edge: true,
           font: "monospace",
           text: 14,
-          theme: "pure"
+          theme: "pure",
+          bar: "macos"
         }}
         command={[
           {

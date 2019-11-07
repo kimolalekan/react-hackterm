@@ -32,7 +32,6 @@ const Windows = (
         </span>
       </div>
     </div>
-    <span style={{ height: 50, display: "block" }} />
   </div>
 );
 

@@ -87,8 +87,7 @@ var Windows = _react2.default.createElement(
         )
       )
     )
-  ),
-  _react2.default.createElement("span", { style: { height: 50, display: "block" } })
+  )
 );
 
 var Ubuntu = _react2.default.createElement(
