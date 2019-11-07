@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Terminal from "react-hackterm";
 
 //Add theme
-import "react-hackterm/themes.default.css";
+import "react-hackterm/dist/themes/default.css";
 
 function App() {
   return (
@@ -12,11 +12,24 @@ function App() {
         config={{
           mode: "root",
           modeText: "example.com",
+          width: 500,
           height: 300,
           edge: true,
           font: "monospace",
-          text: 20
+          text: 14
         }}
+        command={[
+          {
+            name: "whoami",
+            description: "Get package name",
+            value: "react-hackterm"
+          },
+          {
+            name: "pwd",
+            description: "Print working directory",
+            value: "/User/remote/guest/"
+          }
+        ]}
       />
     </div>
   );

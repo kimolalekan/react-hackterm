@@ -27,9 +27,7 @@ $ yarn add react-term
 
 **Themes**
 
-default, github, grass, ocean and pure.
-
-[See available themes here](https://github.com/kimolalekan/react-hackterm/tree/master/dist/themes)
+Available theme: default, github, grass, ocean and pure.
 
 **Usage**
 
@@ -37,9 +35,6 @@ default, github, grass, ocean and pure.
 import React from "react";
 import ReactDOM from "react-dom";
 import Terminal from "react-hackterm";
-
-//Add theme
-import "react-hackterm/dist/themes/default.css";
 
 function App() {
   return (
@@ -52,8 +47,21 @@ function App() {
           height: 300,
           edge: true,
           font: "monospace",
-          text: 14
+          text: 14,
+          theme: "pure"
         }}
+        command={[
+          {
+            name: "whoami",
+            description: "Get package name",
+            value: "react-hackterm"
+          },
+          {
+            name: "pwd",
+            description: "Print working directory",
+            value: "/User/remote/guest/"
+          }
+        ]}
       />
     </div>
   );

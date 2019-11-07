@@ -1,0 +1,378 @@
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+a {
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+img {
+  border-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+.bar {
+  font-family: sans-serif;
+}
+.bar .inner {
+  position: absolute;
+  width: calc(100% - 15px);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: #f1f1f1;
+  border-bottom: #ccc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.bar .windows {
+  float: right;
+}
+.bar .windows .close {
+  color: #ccc;
+  font-size: 18px;
+  padding: 2px 10px;
+  margin-right: 0;
+  cursor: pointer;
+  display: inline-block;
+}
+.bar .windows .close:hover {
+  background: #cb0000;
+  color: #fff;
+}
+.bar .windows .minimize,
+.bar .windows .fullscreen {
+  color: #ccc;
+  font-size: 18px;
+  padding: 2px 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+.bar .windows .minimize:hover,
+.bar .windows .fullscreen:hover {
+  background: #f9f9f9;
+  color: #444;
+}
+.bar .ios .close {
+  background: #f04041;
+  color: #f04041;
+  font-size: 15px;
+  height: 10px;
+  width: 10px;
+  padding: 2px;
+  margin: 10px;
+  margin-right: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+}
+.bar .ios .close span {
+  position: relative;
+  top: -4px;
+  left: 1px;
+}
+.bar .ios .close:hover {
+  color: #444;
+}
+.bar .ios .minimize {
+  background: #e9a113;
+  color: #e9a113;
+  font-size: 15px;
+  height: 10px;
+  width: 10px;
+  padding: 2px;
+  margin: 10px;
+  margin-left: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+}
+.bar .ios .minimize span {
+  position: relative;
+  top: -4px;
+  left: 1px;
+}
+.bar .ios .minimize:hover {
+  color: #444;
+}
+.bar .ios .fullscreen {
+  background: #12b62f;
+  color: #12b62f;
+  font-size: 15px;
+  height: 10px;
+  width: 10px;
+  padding: 2px;
+  margin: 10px;
+  margin-left: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+}
+.bar .ios .fullscreen span {
+  position: relative;
+  top: -4px;
+  left: 1px;
+}
+.bar .ios .fullscreen:hover {
+  color: #444;
+}
+.bar .ubuntu {
+  width: 100%;
+  background: #554b3a;
+}
+.bar .ubuntu .close {
+  background: #dd4814;
+  color: #444;
+  font-size: 15px;
+  height: 10px;
+  width: 10px;
+  padding: 2px;
+  margin: 10px;
+  margin-right: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+}
+.bar .ubuntu .close span {
+  position: relative;
+  top: -4px;
+  left: 1px;
+}
+.bar .ubuntu .close:hover {
+  opacity: 0.7;
+}
+.bar .ubuntu .minimize {
+  background: #999;
+  color: #444;
+  font-size: 15px;
+  height: 10px;
+  width: 10px;
+  padding: 2px;
+  margin: 10px;
+  margin-left: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+}
+.bar .ubuntu .minimize span {
+  position: relative;
+  top: -4px;
+  left: 1px;
+}
+.bar .ubuntu .minimize:hover {
+  opacity: 0.7;
+}
+.bar .ubuntu .fullscreen {
+  position: relative;
+  top: -3px;
+  background: #999;
+  color: #444;
+  font-size: 12px;
+  height: 10px;
+  width: 10px;
+  padding: 2px;
+  margin: 10px;
+  margin-left: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+}
+.bar .ubuntu .fullscreen span {
+  position: relative;
+  top: -2px;
+  left: 1px;
+}
+.bar .ubuntu .fullscreen:hover {
+  opacity: 0.7;
+}
+
+.terminal {
+  text-align: left !important;
+}

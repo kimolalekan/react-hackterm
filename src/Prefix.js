@@ -5,9 +5,9 @@ const prefix = config => {
   if (config.mode === "default") {
     val = "$";
   } else if (config.mode === "root" && config.modeText) {
-    val = "root@" + config.modeText + "#";
+    val = "root@" + config.modeText + " #";
   } else if (config.mode === "custom") {
-    val = `❯`;
+    val = ` ❯`;
   }
   return val;
 };

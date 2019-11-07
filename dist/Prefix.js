@@ -15,9 +15,9 @@ var prefix = function prefix(config) {
   if (config.mode === "default") {
     val = "$";
   } else if (config.mode === "root" && config.modeText) {
-    val = "root@" + config.modeText + "#";
+    val = "root@" + config.modeText + " #";
   } else if (config.mode === "custom") {
-    val = "\u276F";
+    val = " \u276F";
   }
   return val;
 };

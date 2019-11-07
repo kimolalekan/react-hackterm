@@ -14,6 +14,10 @@ var _propTypes = require("prop-types");
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _cookie_js = require("cookie_js");
+
+var _cookie_js2 = _interopRequireDefault(_cookie_js);
+
 var _Command = require("./Command");
 
 var _Command2 = _interopRequireDefault(_Command);
@@ -21,6 +25,12 @@ var _Command2 = _interopRequireDefault(_Command);
 var _Prefix = require("./Prefix");
 
 var _Prefix2 = _interopRequireDefault(_Prefix);
+
+var _Bar = require("./Bar");
+
+var _Bar2 = _interopRequireDefault(_Bar);
+
+var _themes = require("./themes");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41,6 +51,7 @@ var Terminal = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Terminal.__proto__ || Object.getPrototypeOf(Terminal)).call(this, props));
 
     _this.state = {
+      terminalHistory: "",
       commands: [{
         name: "info",
         description: "Get terminal information",
@@ -59,11 +70,27 @@ var Terminal = function (_React$Component) {
   }
 
   _createClass(Terminal, [{
+    key: "setTheme",
+    value: function setTheme(val) {
+      var theme = _react2.default.createElement(_themes.Default, null);
+      if (theme === "default") {
+        theme = _react2.default.createElement(_themes.Default, null);
+      } else if (theme === "github") {
+        theme = _react2.default.createElement(_themes.Github, null);
+      } else if (theme === "grass") {
+        theme = _react2.default.createElement(_themes.Grass, null);
+      } else if (theme === "ocean") {
+        theme = _react2.default.createElement(_themes.Ocean, null);
+      } else if (theme === "pure") {
+        theme = _react2.default.createElement(_themes.Pure, null);
+      }
+      return val;
+    }
+  }, {
     key: "goToBottom",
     value: function goToBottom() {
-      // window.scrollTo(0, document.body.scrollHeight);
-      window.scrollTo(0, document.querySelector(".terminal").scrollHeight);
-      console.log("Done scrolling....");
+      document.querySelector("#terminal_editor").focus();
+      document.querySelector("#terminal_editor").scrollIntoView();
     }
   }, {
     key: "help",
@@ -136,9 +163,31 @@ var Terminal = function (_React$Component) {
       });
     }
   }, {
+    key: "navigateHistory",
+    value: function navigateHistory(e) {
+      e = e || window.event;
+
+      if (e.keyCode === 38) {
+        // up arrow
+        console.log("GOING UP");
+      } else if (e.keyCode === 40) {
+        // down arrow
+        console.log("GOING DOWN");
+      }
+    }
+  }, {
     key: "handleTerminal",
     value: function handleTerminal(e) {
       e.preventDefault();
+
+      var input = document.querySelector("#terminal-editor").value;
+
+      var val = [input];
+      var history = _cookie_js2.default.get("terminal_history");
+      history = history ? JSON.parse(history) : [];
+      history = [].concat(val, _toConsumableArray(history));
+      history = JSON.stringify(history);
+      _cookie_js2.default.set("terminal_history", history);
 
       //If there is empty command return empty value
       this.emptyCommand(this.props.config);
@@ -171,53 +220,63 @@ var Terminal = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var config = this.props.config;
+      var _props = this.props,
+          config = _props.config,
+          terminalHistory = _props.terminalHistory;
 
 
       return _react2.default.createElement(
         "div",
-        {
-          className: "terminal",
-          style: {
-            width: config.width ? config.width : "100%",
-            height: config.height,
-            borderRadius: config.edge ? 5 : 0
-          }
-        },
+        null,
+        this.setTheme(config.theme),
         _react2.default.createElement(
           "div",
-          { className: "inner" },
-          _react2.default.createElement("div", { className: "output" }),
+          {
+            className: "terminal",
+            style: {
+              width: config.width ? config.width : "100%",
+              height: config.height,
+              borderRadius: config.edge ? 5 : 0
+            }
+          },
+          _react2.default.createElement(_Bar2.default, { type: config.bar }),
           _react2.default.createElement(
-            "form",
-            { className: "editor", onSubmit: this.handleTerminal.bind(this) },
+            "div",
+            { className: "inner" },
+            _react2.default.createElement("div", { className: "output" }),
             _react2.default.createElement(
-              "span",
-              {
-                className: "prefix",
+              "form",
+              { className: "editor", onSubmit: this.handleTerminal.bind(this) },
+              _react2.default.createElement(
+                "span",
+                {
+                  className: "prefix",
+                  style: {
+                    fontFamily: "" + config.font,
+                    fontSize: config.text
+                  }
+                },
+                config.mode === "default" ? "$" : "",
+                config.mode === "root" && config.modeText ? "root@" + config.modeText + " #" : "",
+                config.mode === "custom" && config.modeText ? _react2.default.createElement(
+                  "span",
+                  null,
+                  "\u276F"
+                ) : ""
+              ),
+              _react2.default.createElement("input", {
+                id: "terminal-editor",
+                className: "input",
+                autoComplete: "off",
+                spellCheck: false,
+                value: terminalHistory,
+                onKeyUp: this.navigateHistory,
                 style: {
                   fontFamily: "" + config.font,
                   fontSize: config.text
                 }
-              },
-              config.mode === "default" ? "$" : "",
-              config.mode === "root" && config.modeText ? "root@" + config.modeText + " #" : "",
-              config.mode === "custom" && config.modeText ? _react2.default.createElement(
-                "span",
-                null,
-                "\u276F"
-              ) : ""
-            ),
-            _react2.default.createElement("input", {
-              id: "terminal-editor",
-              className: "input",
-              autoComplete: "off",
-              spellCheck: false,
-              style: {
-                fontFamily: "" + config.font,
-                fontSize: config.text
-              }
-            })
+              })
+            )
           )
         )
       );
