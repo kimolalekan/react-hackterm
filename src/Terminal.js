@@ -44,7 +44,7 @@ class Terminal extends React.Component {
     } else if (theme === "pure") {
       theme = <Pure />;
     }
-    return val;
+    return theme;
   }
 
   goToBottom() {

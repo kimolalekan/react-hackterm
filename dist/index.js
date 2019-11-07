@@ -84,7 +84,7 @@ var Terminal = function (_React$Component) {
       } else if (theme === "pure") {
         theme = _react2.default.createElement(_themes.Pure, null);
       }
-      return theme;
+      return val;
     }
   }, {
     key: "goToBottom",
