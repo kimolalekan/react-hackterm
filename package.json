@@ -1,6 +1,6 @@
 {
   "name": "react-hackterm",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Hackable terminal emulator in React",
   "main": "dist/index.js",
   "scripts": {

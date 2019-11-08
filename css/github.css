@@ -2,6 +2,7 @@
 .terminal {
   background: #f4f4f4;
   color: #3e3e3e;
+  overflow: auto;
 }
 .terminal .prefix {
   color: #3e3e3e;
