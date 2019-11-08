@@ -1,10 +1,11 @@
+.terminal-theme,
 .terminal {
   background: #000;
   color: #fff;
-  overflow: auto;
 }
 .terminal .inner {
   padding: 10px;
+  overflow: auto;
 }
 .terminal .inner .output,
 .terminal .inner .output-shell {

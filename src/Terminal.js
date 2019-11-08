@@ -177,17 +177,20 @@ class Terminal extends React.Component {
     const { bar, config, terminalHistory, theme } = this.props;
 
     return (
-      <div>
+      <div
+        className="terminal-theme"
+        style={{ borderRadius: config.edge ? 5 : 0 }}
+      >
         <Theme value={theme} />
+        <Bar type={bar} size={config.width} />
         <div
+          id="terminal"
           className="terminal"
           style={{
-            width: config.width ? config.width : "100%",
             height: config.height,
             borderRadius: config.edge ? 5 : 0
           }}
         >
-          <Bar type={bar} />
           <div className="inner">
             <div className="output" />
             <form className="editor" onSubmit={this.handleTerminal.bind(this)}>
@@ -214,11 +217,11 @@ class Terminal extends React.Component {
                 autoComplete="off"
                 spellCheck={false}
                 value={terminalHistory}
-                onKeyUp={this.navigateHistory}
                 style={{
                   fontFamily: `${config.font}`,
                   fontSize: config.text
                 }}
+                onKeyUp={this.checkKey.bind(this)}
               />
             </form>
           </div>
