@@ -1,6 +1,6 @@
 {
   "name": "react-hackterm",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Hackable terminal emulator in React",
   "main": "dist/index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "author": "Olalekan Animashaun",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kimolalekan/react-hackterm.gitissues"
+    "url": "https://github.com/kimolalekan/react-hackterm.git#issues"
   },
   "homepage": "https://github.com/kimolalekan/react-hackterm.git#readme",
   "dependencies": {

@@ -179,7 +179,7 @@ class Terminal extends React.Component {
     return (
       <div
         className="terminal-theme"
-        style={{ borderRadius: config.edge ? 5 : 0 }}
+        style={{ borderRadius: config.edge ? 5 : 0, width: config.width }}
       >
         <Theme value={theme} />
         <Bar type={bar} size={config.width} />

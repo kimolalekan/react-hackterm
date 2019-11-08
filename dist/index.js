@@ -323,7 +323,7 @@ var Terminal = (function(_React$Component) {
           "div",
           {
             className: "terminal-theme",
-            style: { borderRadius: config.edge ? 5 : 0 }
+            style: { borderRadius: config.edge ? 5 : 0, width: config.width }
           },
           _react2.default.createElement(_themes2.default, { value: theme }),
           _react2.default.createElement(_Bar2.default, {
