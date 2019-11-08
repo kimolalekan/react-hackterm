@@ -226,6 +226,7 @@ var Terminal = function (_React$Component) {
             id: "terminal",
             className: "terminal",
             style: {
+              width: config.width,
               height: config.height,
               borderRadius: config.edge ? 5 : 0
             }
