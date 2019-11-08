@@ -74,8 +74,8 @@ var Terminal = function (_React$Component) {
   _createClass(Terminal, [{
     key: "goToBottom",
     value: function goToBottom() {
-      document.querySelector("#terminal_editor").focus();
-      document.querySelector("#terminal_editor").scrollIntoView();
+      document.querySelector("#terminal-editor").focus();
+      document.querySelector("#terminal-editor").scrollIntoView();
     }
   }, {
     key: "help",
@@ -125,7 +125,7 @@ var Terminal = function (_React$Component) {
       input = input.trim();
 
       if (input.length < 1) {
-        document.querySelector(".output").innerHTML += "<div style='width:100%'>" + (0, _Prefix2.default)(config) + "</div>";
+        document.querySelector(".output").innerHTML += "<div style='width:100%; display: block;'>" + (0, _Prefix2.default)(config) + "</div>";
 
         document.querySelector("#terminal-editor").value = "";
         this.goToBottom();
@@ -206,10 +206,10 @@ var Terminal = function (_React$Component) {
     key: "render",
     value: function render() {
       var _props = this.props,
-        bar = _props.bar,
-        config = _props.config,
-        terminalHistory = _props.terminalHistory,
-        theme = _props.theme;
+          bar = _props.bar,
+          config = _props.config,
+          terminalHistory = _props.terminalHistory,
+          theme = _props.theme;
 
 
       return _react2.default.createElement(

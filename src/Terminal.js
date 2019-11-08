@@ -32,8 +32,8 @@ class Terminal extends React.Component {
   }
 
   goToBottom() {
-    document.querySelector("#terminal_editor").focus();
-    document.querySelector("#terminal_editor").scrollIntoView();
+    document.querySelector("#terminal-editor").focus();
+    document.querySelector("#terminal-editor").scrollIntoView();
   }
 
   help(config) {
@@ -99,7 +99,7 @@ class Terminal extends React.Component {
 
     if (input.length < 1) {
       document.querySelector(".output").innerHTML +=
-        "<div style='width:100%'>" + Prefix(config) + "</div>";
+        "<div style='width:100%; display: block;'>" + Prefix(config) + "</div>";
 
       document.querySelector("#terminal-editor").value = "";
       this.goToBottom();
