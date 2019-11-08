@@ -221,7 +221,7 @@ class Terminal extends React.Component {
                   fontFamily: `${config.font}`,
                   fontSize: config.text
                 }}
-                onKeyUp={this.checkKey.bind(this)}
+                onKeyUp={this.navigateHistory.bind(this)}
               />
             </form>
           </div>
